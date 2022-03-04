@@ -74,7 +74,7 @@ class Books extends Component {
     </div>
 
     var bookSection5 = <div className="singleBookContainer">
-      <img src="https://cdn.jsdelivr.net/gh/needleworm/hslee/src/images/books/covers/9.jpg" alt="book9" className="bookCoverImage"/>
+      <img src="https://cdn.jsdelivr.net/gh/needleworm/hslee/src/images/books/covers/5.png" alt="book9" className="bookCoverImage"/>
       <h5><a href="https://doi.org/10.978.896489/5344" target="_blank"  rel="noreferrer">
           세무사 메이커, 2년 안에 세무사 합격하기 (감수) <i className="fas fa-external-link-alt"></i>
         </a>
