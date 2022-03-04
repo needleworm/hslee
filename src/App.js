@@ -265,7 +265,6 @@ class App extends Component {
                   <nav className="cover-navigation navigation--social">
                     <ul className="navigation">
                       {books}
-                      {experience}
                       {designs}
                       {contact}
                     </ul>
