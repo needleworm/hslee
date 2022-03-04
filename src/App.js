@@ -1,16 +1,9 @@
 import React, {Component} from 'react';
 import './App.css';
 import Books from "./components/books"
-import Websites from "./components/websites"
-import Codes from "./components/codes"
-import Papers from "./components/papers"
-import Patents from "./components/patents"
-import Lectures from "./components/lectures"
 import Designs from "./components/designs"
-import News from "./components/news"
-import Media from "./components/media"
+import Experience from "./components/experience"
 import Contact from "./components/contact"
-import Membership from "./components/membership"
 
 class App extends Component {
   constructor(props){
@@ -21,22 +14,13 @@ class App extends Component {
         content
           none
           books
-          websites
-          codes
-          research
-          lectures
+          experience
           designs
-          news
           contact
-          media
       */
       content:"none",
       sns:{
-        email: "bhban@kakao.com",
-        github:  "https://github.com/needleworm",
-        linkedin:  "https://www.linkedin.com/in/bhban",
-        youtube:  "https://www.youtube.com/channel/UCpV0ZdloVwvSjxHfnYYQPQg?sub_confirmation=1",
-        researchgate: "https://www.researchgate.net/profile/Byunghyun_Ban"
+        email: "dalaway.lee@gmail.com",
       }
     }
     this.closeSideMenu = this._closeSideMenu.bind(this)
@@ -98,46 +82,17 @@ class App extends Component {
   }
 
   drawHeader(){
-    var github = <span className="navigation__item_sns">
-                  <a href={this.state.sns.github} title="Meet My Works on GitHub" target="_blank"  rel="noreferrer">
-                    <i className="fab fa-github-square fa-lg"></i>
-                    <span className="label">GitHub</span>
-                  </a>
-                  </span>
-
-    var linkedin = <span className="navigation__item_sns">
-                    <a href={this.state.sns.linkedin}  title="My LinkedIn Profile" target="_blank"  rel="noreferrer">
-                      <i className="fab fa-linkedin fa-lg"></i>
-                      <span className="label">LinkedIn</span>
-                    </a>
-                    </span>
-
-    var youtube = <span className="navigation__item_sns">
-      <a href={this.state.sns.youtube}  title="My Youtube Channel" target="_blank"  rel="noreferrer">
-                <i className="fab fa-youtube-square fa-lg"></i>
-                <span className="label">Youtube</span>
-              </a>
-              </span>
-
-    var researchgate = <span className="navigation__item_sns">
-      <a href={this.state.sns.researchgate}  title="Meet Me on Researchgate" target="_blank"  rel="noreferrer">
-                <i className="fab fa-researchgate fa-lg"></i>
-                <span className="label">Researchgate</span>
-              </a>
-            </span>
-
     var blog = <span className="navigation__item_sns">
-    <a href="https://brunch.co.kr/@needleworm"  title="My Blog" target="_blank"  rel="noreferrer">
+    <a href="https://brunch.co.kr/@pinix0627"  title="My Blog" target="_blank"  rel="noreferrer">
               <i className="fas fa-pen-square fa-lg"></i>
               <span className="label">Blog</span>
             </a>
           </span>
 
     var profilePicButton = <a href="#home" title="Home">
-      <img src="https://cdn.jsdelivr.net/gh/needleworm/needleworm.github.io/src/images/profile_pic.jpg" className="user-image" alt="My Profile"
+      <img src="https://cdn.jsdelivr.net/gh/needleworm/hslee/src/images/profile_pic.png" className="user-image" alt="My Profile"
         onClick={
           function(e){
-
             this.setState({
               latestButton: "none",
               content:"none"
@@ -179,38 +134,7 @@ class App extends Component {
       </a>
     </li>
 
-    var websites = <li className="navigation__item">
-      <a href="#websites" title="Websites" className="panel-button projects-button"
-        onClick={
-          function(e){
-            if (this.state.latestButton === "websites"){
-              this.setState({
-                content: "none",
-                latestButton: "none"
-              })
-              this.closeSideMenu()
-            } else{
-              this.setState({
-                content: "websites",
-                latestButton: "websites"
-              })
-              this.openSideMenu()
-              var navigationWrapper = document.querySelector('.navigation-wrapper')
-              var btnMobileMenuIcon = document.querySelector('.btn-mobile-menu__icon')
-              navigationWrapper.classList.toggle('visible')
-              btnMobileMenuIcon.classList.toggle('fa-caret-square-down')
-              btnMobileMenuIcon.classList.toggle('fa-caret-square-up')
-              btnMobileMenuIcon.classList.toggle('animated')
-              btnMobileMenuIcon.classList.toggle('fadeIn')
-            }
-          }.bind(this)
-        }
-      >
-        <i className="fas fa-laptop-code"></i>&nbsp;Websites
-      </a>
-    </li>
-
-    var codes = <li className="navigation__item">
+    var experience = <li className="navigation__item">
       <a href="#codes" title="Codes" className="panel-button projects-button"
         onClick={
           function(e){
@@ -238,96 +162,6 @@ class App extends Component {
         }
       >
         <i className="fas fa-code-branch"></i>&nbsp;Codes
-      </a>
-    </li>
-
-    var patents = <li className="navigation__item">
-      <a href="#patents" title="Patents" className="panel-button projects-button"
-        onClick={
-          function(e){
-            if (this.state.latestButton === "patents"){
-              this.setState({
-                content: "none",
-                latestButton: "none"
-              })
-              this.closeSideMenu()
-            } else{
-              this.setState({
-                content: "patents",
-                latestButton: "patents"
-              })
-              this.openSideMenu()
-              var navigationWrapper = document.querySelector('.navigation-wrapper')
-              var btnMobileMenuIcon = document.querySelector('.btn-mobile-menu__icon')
-              navigationWrapper.classList.toggle('visible')
-              btnMobileMenuIcon.classList.toggle('fa-caret-square-down')
-              btnMobileMenuIcon.classList.toggle('fa-caret-square-up')
-              btnMobileMenuIcon.classList.toggle('animated')
-              btnMobileMenuIcon.classList.toggle('fadeIn')
-            }
-          }.bind(this)
-        }>
-        <i className="far fa-registered"></i>&nbsp;Patents
-      </a>
-    </li>
-
-    var papers = <li className="navigation__item">
-      <a href="#papers" title="Papers" className="panel-button projects-button"
-        onClick={
-          function(e){
-            if (this.state.latestButton === "papers"){
-              this.setState({
-                content: "none",
-                latestButton: "none"
-              })
-              this.closeSideMenu()
-            } else{
-              this.setState({
-                content: "papers",
-                latestButton: "papers"
-              })
-              this.openSideMenu()
-              var navigationWrapper = document.querySelector('.navigation-wrapper')
-              var btnMobileMenuIcon = document.querySelector('.btn-mobile-menu__icon')
-              navigationWrapper.classList.toggle('visible')
-              btnMobileMenuIcon.classList.toggle('fa-caret-square-down')
-              btnMobileMenuIcon.classList.toggle('fa-caret-square-up')
-              btnMobileMenuIcon.classList.toggle('animated')
-              btnMobileMenuIcon.classList.toggle('fadeIn')
-            }
-          }.bind(this)
-        }>
-        <i className="fas fa-graduation-cap"></i>&nbsp;Papers
-      </a>
-    </li>
-
-    var lectures = <li className="navigation__item">
-      <a href="#lectures" title="Lectures" className="panel-button projects-button"
-        onClick={
-          function(e){
-            if (this.state.latestButton === "lectures"){
-              this.setState({
-                content: "none",
-                latestButton: "none"
-              })
-              this.closeSideMenu()
-            } else{
-              this.setState({
-                content: "lectures",
-                latestButton: "lectures"
-              })
-              this.openSideMenu()
-              var navigationWrapper = document.querySelector('.navigation-wrapper')
-              var btnMobileMenuIcon = document.querySelector('.btn-mobile-menu__icon')
-              navigationWrapper.classList.toggle('visible')
-              btnMobileMenuIcon.classList.toggle('fa-caret-square-down')
-              btnMobileMenuIcon.classList.toggle('fa-caret-square-up')
-              btnMobileMenuIcon.classList.toggle('animated')
-              btnMobileMenuIcon.classList.toggle('fadeIn')
-            }
-          }.bind(this)
-        }>
-        <i className="fas fa-chalkboard-teacher"></i>&nbsp;Lectures
       </a>
     </li>
 
@@ -361,66 +195,6 @@ class App extends Component {
       </a>
     </li>
 
-    var news = <li className="navigation__item">
-      <a href="#news" title="Me on Newses"
-        onClick={
-          function(e){
-            if (this.state.latestButton === "news"){
-              this.setState({
-                content: "none",
-                latestButton: "none"
-              })
-              this.closeSideMenu()
-            } else{
-              this.setState({
-                content: "news",
-                latestButton: "news"
-              })
-              this.openSideMenu()
-              var navigationWrapper = document.querySelector('.navigation-wrapper')
-              var btnMobileMenuIcon = document.querySelector('.btn-mobile-menu__icon')
-              navigationWrapper.classList.toggle('visible')
-              btnMobileMenuIcon.classList.toggle('fa-caret-square-down')
-              btnMobileMenuIcon.classList.toggle('fa-caret-square-up')
-              btnMobileMenuIcon.classList.toggle('animated')
-              btnMobileMenuIcon.classList.toggle('fadeIn')
-            }
-          }.bind(this)
-        }>
-        <i className="far fa-newspaper"></i>&nbsp;News
-      </a>
-    </li>
-
-    var media = <li className="navigation__item">
-      <a href="#media" title="Me on Media"
-        onClick={
-          function(e){
-            if (this.state.latestButton === "media"){
-              this.setState({
-                content: "none",
-                latestButton: "none"
-              })
-              this.closeSideMenu()
-            } else{
-              this.setState({
-                content: "media",
-                latestButton: "media"
-              })
-              this.openSideMenu()
-              var navigationWrapper = document.querySelector('.navigation-wrapper')
-              var btnMobileMenuIcon = document.querySelector('.btn-mobile-menu__icon')
-              navigationWrapper.classList.toggle('visible')
-              btnMobileMenuIcon.classList.toggle('fa-caret-square-down')
-              btnMobileMenuIcon.classList.toggle('fa-caret-square-up')
-              btnMobileMenuIcon.classList.toggle('animated')
-              btnMobileMenuIcon.classList.toggle('fadeIn')
-            }
-          }.bind(this)
-        }>
-        <i class="fas fa-video"></i>&nbsp;Media
-      </a>
-    </li>
-
     var contact = <li className="navigation__item">
       <a href="#contact" title="Contact Me"
         onClick={
@@ -450,36 +224,6 @@ class App extends Component {
         <i className="far fa-envelope"></i>&nbsp;Contact
       </a>
     </li>
-
-  var membership = <li className="navigation__item">
-    <a href="#membership" title="My Memberships"
-      onClick={
-        function(e){
-          if (this.state.latestButton === "membership"){
-            this.setState({
-              content: "none",
-              latestButton: "none"
-            })
-            this.closeSideMenu()
-          } else{
-            this.setState({
-              content: "membership",
-              latestButton: "membership"
-            })
-            this.openSideMenu()
-            var navigationWrapper = document.querySelector('.navigation-wrapper')
-            var btnMobileMenuIcon = document.querySelector('.btn-mobile-menu__icon')
-            navigationWrapper.classList.toggle('visible')
-            btnMobileMenuIcon.classList.toggle('fa-caret-square-down')
-            btnMobileMenuIcon.classList.toggle('fa-caret-square-up')
-            btnMobileMenuIcon.classList.toggle('animated')
-            btnMobileMenuIcon.classList.toggle('fadeIn')
-          }
-        }.bind(this)
-      }>
-      <i className="far fa-id-badge"></i>&nbsp;Membership
-    </a>
-  </li>
     
     var mobileButtenMenu =  <span className="mobile btn-mobile-menu"
       onClick={
@@ -503,17 +247,13 @@ class App extends Component {
     return(
       <div>
         {mobileButtenMenu}
-        <header className="panel-cover" style={{background_image: "https://cdn.jsdelivr.net/gh/needleworm/needleworm.github.io/src/images/background.jpg", maxWidth:'100%'}}>
+        <header className="panel-cover" style={{background_image: "https://cdn.jsdelivr.net/gh/needleworm/hslee/src/images/background.jpg", maxWidth:'100%'}}>
           <div className="panel-main">
             <div className="panel-main__inner panel-inverted">
               <div className="panel-main__content">
                 {profilePicButton}
                 <h1 className="panel-cover__title panel-title">Byunghyun Ban</h1>
                 <nav className="cover-navigation navigation--social">
-                    {github}
-                    {linkedin}
-                    {youtube}
-                    {researchgate}
                       {blog}
                 </nav>
                 <hr className="panel-cover__divider"/>
@@ -525,17 +265,8 @@ class App extends Component {
                   <nav className="cover-navigation navigation--social">
                     <ul className="navigation">
                       {books}
-                      {media}
-                      {websites}
-                      {codes}
-                      {papers}
-                      {patents}
-                      {lectures}
-                      {/*
+                      {experience}
                       {designs}
-                      */}
-                      {news}
-                      {membership}
                       {contact}
                     </ul>
                   </nav>
@@ -551,7 +282,7 @@ class App extends Component {
 
   drawBody(){
     var footer = <div><footer className="footer">
-        <span className="footer__copyright">&copy; 2021. Byunghyun Ban All rights reserved.</span>
+        <span className="footer__copyright">&copy; 2022. Hyoseok Lee All rights reserved.</span>
       </footer>
       </div>
     
@@ -575,45 +306,17 @@ class App extends Component {
         return (
           <Books/>
         )
-    } else if (this.state.content === "websites"){
+    } else if (this.state.content === "experience"){
       return (
-        <Websites/>
-      )
-    } else if (this.state.content === "codes"){
-      return (
-        <Codes/>
-      )
-    } else if (this.state.content === "patents"){
-      return (
-        <Patents/>
-      )
-    } else if (this.state.content === "papers"){
-      return (
-        <Papers/>
-      )
-    } else if (this.state.content === "lectures"){
-      return (
-        <Lectures/>
+        <Experience/>
       )
     } else if (this.state.content === "designs"){
       return (
         <Designs/>
       )
-    } else if (this.state.content === "news"){
-      return (
-        <News/>
-      )
-    } else if (this.state.content === "media"){
-      return (
-        <Media/>
-      )
     } else if (this.state.content === "contact"){
       return (
         <Contact/>
-      )
-    }else if (this.state.content === "membership"){
-      return (
-        <Membership/>
       )
     }
   }

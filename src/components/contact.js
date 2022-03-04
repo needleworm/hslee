@@ -13,7 +13,7 @@ class Contact extends Component {
 
   submitForm() {
     return (
-      <form id="fs-frm" name="complaint-form" accept-charset="utf-8" action="https://formspree.io/f/xaylgyzq" method="post">
+      <form id="fs-frm" name="complaint-form" accept-charset="utf-8" action="https://formspree.io/f/mbjwykny" method="post">
         <fieldset id="fs-frm-inputs">
           <p>
             <label for="full-name">Name</label><br/>
